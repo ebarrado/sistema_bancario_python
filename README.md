@@ -14,9 +14,11 @@
 - Todos os saques devem ser armazenados em uma variável e exibidos na operação de extrato
 - A operação de extrato deve listar todos os depositos e saques realizados na conta"
 
+<div align="center">
+  <img src="img/image-1.png" alt="Opção 1 - Depositar" width="300"/>
+  <img src="img/image.png" alt="Opção 2 - Sacar" width="300"/>
+</div>
 
-![alt text](img/image-1.png)
-![alt text](img/image.png)
 
 ## 📒 Referências
  - [DIO](https://www.dio.me/)
