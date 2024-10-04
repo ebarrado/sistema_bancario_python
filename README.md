@@ -15,7 +15,7 @@
 - A operação de extrato deve listar todos os depositos e saques realizados na conta"
 
 
-![alt text](img/image-1.png)
+![alt text](img/image-2.png)
 ![alt text](img/image.png)
 
 
