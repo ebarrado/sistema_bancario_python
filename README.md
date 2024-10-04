@@ -15,8 +15,8 @@
 - A operação de extrato deve listar todos os depositos e saques realizados na conta"
 
 <div align="center">
-  <img src="img/image-1.png" alt="Opção 1 - Depositar" width="400"/>
-  <img src="img/image.png" alt="Opção 2 - Sacar" width="400"/>
+  <img src="img/image-1.png" alt="Opção 1 - Depositar" width="500"/>
+  <img src="img/image.png" alt="Opção 2 - Sacar" width="500"/>
 </div>
 
 
