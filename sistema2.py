@@ -7,13 +7,14 @@ import textwrap
 def menu():
     menu = """\n
     =======================INICIO MENU =======================
-    [0]\tSair    
+       
     [1]\tDepositar
     [2]\tSacar
     [3]\tExtrato
     [4]\tNova Conta
     [5]\tListar Conta
     [6]\tNovo Usuário
+    [0]\tSair 
     
     =========================FIM MENU ========================
     =>"""
@@ -73,10 +74,35 @@ def criar_usuario(usuarios):
         return
     nome = input("Informe o nome completo: ")
     data_nascimento = input("Informe a data de nascimento (dd-mm-aaaa)")
-    endereco = input("Informe o endereço (logradouro, nro - bairro - cidade/estado)")
+    endereco = input("Informe o 0endereço (logradouro, nro - bairro - cidade/estado)")
     usuarios.append({"nome":nome, "data_nascimento":data_nascimento, "cpf":cpf, "endereco":endereco})
     
     print("===Usuário criado com sucesso===")
+    
+def criar_conta(agencia, numero_conta, usuarios):
+    cpf = input("Informe o CPF do usuário: ")
+    usuario = filtrar_usuario(cpf, usuarios)
+    
+    if usuario:
+        print("\n===Conta criada com sucesso===")
+        return{"agencia": agencia, "numero_conta":numero_conta, "usuario": usuario}
+    
+    print("\n---Usuário não encontrado, fluxo de criação de conta encerrado!---")
+    
+def listar_contas(contas):
+    print("\--Listando coontas--")
+    for conta in contas:
+        linha = f"""\
+            Agência:\t{conta['agencia']}
+            C/C:\t\t{conta['numero_conta']}    
+            Titular:\t\t{conta['usuario']['nome']}       
+            """
+        print("=" *100)
+        print(textwrap.dedent(linha))
+    
+    
+    
+    
     
 def filtrar_usuario(cpf,usuarios):
     usuarios_filtrados = [usuario for usuario in usuarios if usuario["cpf"] ==cpf]
@@ -92,6 +118,7 @@ def main():
     numero_saques = 0
     usuarios = []
     contas = []
+  
     
     while True:
       
@@ -119,10 +146,16 @@ def main():
         elif opcao == '3':
             exibir_extrato(saldo, extrato=extrato)
             
-       
+        elif opcao == '4':
+            numero_conta = len(contas) + 1
+            conta = criar_conta(AGENCIA, numero_conta, usuarios)        
             
-      
-            
+            if conta:
+                contas.append(conta)    
+        
+        elif opcao == '5':
+           listar_contas(contas) 
+
         elif opcao == '6':
             criar_usuario(usuarios)
             
